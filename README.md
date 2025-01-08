@@ -51,13 +51,13 @@ RAILS_ENV=production bundle exec rake canvas:compile_assets;
 cp ../canvas/nginxconf/customize.conf /usr/src/nginx/location.d/;
 cp ../canvas/nginxconf/nginx.conf /usr/src/nginx/nginx.conf;
 
-# restart web container 
+restart web container 
 
 # in rce api container
 cp -f ../canvas-rce-api/app/api/wrapCanvas.js ./app/api/wrapCanvas.js
-```
 
-# webコンテナ内で以下のコマンドを実行
+# webコンテナとjobコンテナ内で以下のコマンドを実行
+
 mkdir ssl
 mkdir ssl/rce-api
 
@@ -77,3 +77,5 @@ jobsコンテナ用にrce api用の証明書を配置する
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/fullchain.pem
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/privkey.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/privkey.pem
 
+# ジョブコンテナ内で以下のコマンドを実行
+bundle exec script/delayed_job start
