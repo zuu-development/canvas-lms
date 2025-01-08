@@ -58,25 +58,23 @@ cp -f ../canvas-rce-api/app/api/wrapCanvas.js ./app/api/wrapCanvas.js
 
 ## webコンテナとjobコンテナ内で以下のコマンドを実行
 
-mkdir ssl
+mkdir ssl<br/>
 mkdir ssl/rce-api
 
 ## webコンテナ用に証明書を配置する
-sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/fullchain.pem canvas-lms-web-1:/usr/src/app/ssl/fullchain.pem
+sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/fullchain.pem canvas-lms-web-1:/usr/src/app/ssl/fullchain.pem<br/>
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/privkey.pem canvas-lms-web-1:/usr/src/app/ssl/privkey.pem
 
 ## webコンテナ用にrce api用の証明書を配置する
-sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-web-1:/usr/src/app/ssl/rce-api/fullchain.pem
-
+sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-web-1:/usr/src/app/ssl/rce-api/fullchain.pem<br/>
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/privkey.pem canvas-lms-web-1:/usr/src/app/ssl/rce-api/privkey.pem
 
 ## jobsコンテナ用に証明書を配置する
-sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/fullchain.pem canvas-lms-jobs-1:/usr/src/app/ssl/fullchain.pem
+sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/fullchain.pem canvas-lms-jobs-1:/usr/src/app/ssl/fullchain.pem<br/>
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/privkey.pem canvas-lms-jobs-1:/usr/src/app/ssl/privkey.pem
 
 ## jobsコンテナ用にrce api用の証明書を配置する
-sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/fullchain.pem
-
+sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/fullchain.pem<br/>
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/privkey.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/privkey.pem
 
 # ジョブコンテナ内で以下のコマンドを実行
