@@ -67,6 +67,7 @@ sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/privkey
 
 ## webコンテナ用にrce api用の証明書を配置する
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-web-1:/usr/src/app/ssl/rce-api/fullchain.pem
+
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/privkey.pem canvas-lms-web-1:/usr/src/app/ssl/rce-api/privkey.pem
 
 ## jobsコンテナ用に証明書を配置する
@@ -75,6 +76,7 @@ sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms/privkey
 
 ## jobsコンテナ用にrce api用の証明書を配置する
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/fullchain.pem
+
 sudo docker cp /home/taishiro_murata/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/privkey.pem canvas-lms-jobs-1:/usr/src/app/ssl/rce-api/privkey.pem
 
 # ジョブコンテナ内で以下のコマンドを実行
