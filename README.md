@@ -77,11 +77,13 @@ mkdir ssl/rce-api
 ## webコンテナとjobコンテナに証明書を配置
 
 sudo docker cp /home/[user_path]/canvas-lms/nginxconf/ssl/canvas-lms/fullchain.pem [container_name]:/usr/src/app/ssl/fullchain.pem
+
 sudo docker cp /home/[user_path]/canvas-lms/nginxconf/ssl/canvas-lms/privkey.pem [container_name]:/usr/src/app/ssl/privkey.pem
 
 ## rce api用の証明書も同様に配置
 
-sudo docker cp /home/[user_path]/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem [container_name]:/usr/src/app/ssl/rce-api/fullchain.pem
+sudo docker cp /home/[user_path]/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/fullchain.pem [container_name]:/usr/src/app/ssl/rce-api/fullchain.pem　　
+
 sudo docker cp /home/[user_path]/canvas-lms/nginxconf/ssl/canvas-lms-rce-api/privkey.pem [container_name]:/usr/src/app/ssl/rce-api/privkey.pem
 
 ## ジョブの実行
